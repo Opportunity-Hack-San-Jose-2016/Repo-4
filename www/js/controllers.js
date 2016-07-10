@@ -117,7 +117,35 @@ for(var i=0;i<temp.length;i++)
 	}
 
 	$.ajax(settings).done(function (response) {
-	console.log(response);
+	
 	});
   }
+})
+.controller('viewPostsCtrl', function($scope,$http) {
+	$http({
+		//async: true,
+		//crossDomain: true,
+		method : "GET",
+		url : "http://cloudant41.mybluemix.net/commentserver"		
+	}).then(function mySucces(response) {
+		console.log("success");
+		//console.log()
+		console.log(response.data.docs[0].comment);
+		var temp = (response.data.docs);
+		//console.log(temp.length)
+		$scope.items_post = new Array(temp.length);
+		for(var i=0;i<temp.length;i++)
+		{
+			console.log(temp[i].comment + temp[i]._id);
+			$scope.items_post[i] =i + " " + temp[i].comment ;
+		}
+	}, function myError(response) {
+		console.log("failure");
+	});
+	//$scope.items_post = new Array(4);
+	/*for(var i=0;i<temp.length;i++)
+	{
+		$scope.items[i] = temp[i].name;
+	}*/
+	//$scope.items_post =['Bay Area Fun meetup','Bay Area Young Friends','Time to eat and make more friends', 'San Jose Singles Meetup'];
 })
