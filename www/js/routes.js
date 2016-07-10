@@ -66,19 +66,47 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('login', {
+  .state('menu.login', {
     url: '/page8',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl'
+      }
+    }
   })
 
-  .state('signup', {
+  .state('menu.signup', {
     url: '/page9',
-    templateUrl: 'templates/signup.html',
-    controller: 'signupCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/signup.html',
+        controller: 'signupCtrl'
+      }
+    }
   })
 
-$urlRouterProvider.otherwise('/page8')
+  .state('menu.page', {
+    url: '/page10',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/page.html',
+        controller: 'pageCtrl'
+      }
+    }
+  })
+
+  .state('menu.postSomething', {
+    url: '/page11',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/postSomething.html',
+        controller: 'postSomethingCtrl'
+      }
+    }
+  })
+
+$urlRouterProvider.otherwise('/side-menu21/page8')
 
   
 
