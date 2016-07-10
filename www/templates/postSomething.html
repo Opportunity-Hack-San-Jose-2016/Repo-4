@@ -3,7 +3,7 @@
         <form class="list " id="postSomething-form4">
             <label id="postSomething-input6" class="item item-input ">
                 <span class="input-label">I need help with</span>
-                <input placeholder="Type here..." type="text">
+                <textarea name="Text1" placeholder="Type here..."cols="40" rows="5" ng-model = "tweetdata"></textarea>
             </label>
         </form>
         <form class="list " id="postSomething-form5">
@@ -18,7 +18,7 @@
                 </select>
             </label>
         </form>
-        <button class=" button button-positive  button-block "  id="postSomething-button6">Post</button>
+        <button class=" button button-positive  button-block "  ng-click = "tweet(tweetdata)" id="postSomething-button6">Post</button>
 		<input type="text" ng-model="testcontent"><br>
 	</ion-content>
 </ion-view>
