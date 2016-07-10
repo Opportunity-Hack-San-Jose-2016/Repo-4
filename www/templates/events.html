@@ -1,3 +1,14 @@
-<ion-view style="" class=" " id="page6" title="Events">
-    <ion-content class="has-header" padding="true"></ion-content>
+<ion-view title="Events" id="page6" class=" ">
+    <ion-content padding="true" class="has-header">
+      <label class="item item-input">
+    <span class="input-label">ZipCode</span>
+    <input type="text" ng-model = "zipcode">
+    </label>
+    <a href id="search-button5" class ="button button-positive button-block " ng-click = "search(zipcode)"> </a>
+    <ion-list>
+  <ion-item ng-repeat="item in items">
+    {{item}}
+  </ion-item>
+</ion-list>
+    </ion-content>
 </ion-view>
